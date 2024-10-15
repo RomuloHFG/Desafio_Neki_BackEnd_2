@@ -18,5 +18,3 @@ public class LevelOfExpertise {
     private String name;
 }
 
-//Este código define a estrutura e as regras básicas de validação para a entidade LevelOfExpertise,
-//que será usada para persistir dados no banco de dados.

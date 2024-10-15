@@ -17,6 +17,3 @@ public class Specialty {
     @NotEmpty(message = "Name is required")
     private String name;
 }
-
-//A entidade Specialty é mapeada para uma tabela no banco de dados e inclui regras de
-//validação para garantir que todos os dados necessários sejam fornecidos.

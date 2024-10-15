@@ -52,7 +52,3 @@ public class SecurityConfig {
     }
 }
 
-//A classe SecurityConfig é fundamental para configurar políticas de segurança robustas na sua aplicação Spring Boot,
-//garantindo que apenas usuários autenticados possam acessar recursos protegidos.
-//Ela também integra funcionalidades avançadas de segurança, como proteção contra CSRF,
-//gerenciamento stateless de sessões e personalização de filtros de autenticação, proporcionando um ambiente seguro e controlado para sua aplicação web.

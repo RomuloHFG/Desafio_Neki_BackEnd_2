@@ -54,5 +54,3 @@ public class AuthController {
         return ResponseEntity.badRequest().build();
     }
 }
-//Este controlador lida com a lógica de autenticação e registro de usuários,
-//gerando tokens JWT para sessões autenticadas eutilizando um repositório de usuários para persistência de dados.

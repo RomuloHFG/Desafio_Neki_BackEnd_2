@@ -23,6 +23,3 @@ public class User {
     private String password;
 }
 
-//As anotações do Lombok são utilizadas para gerar automaticamente os métodos getters, setters e os construtores.
-//As anotações JPA são utilizadas para mapear a classe User para uma tabela no banco de dados chamada users,
-//com o campo id gerado automaticamente como um UUID.

@@ -45,7 +45,3 @@ public class SecurityFilter extends OncePerRequestFilter {
     }
 }
 
-//O SecurityFilter desempenha um papel fundamental na segurança da sua aplicação Spring Boot,
-//interceptando cada requisição para verificar e validar a autenticação do usuário por meio de tokens JWT.
-//Ele integra-se diretamente com o contexto de segurança do Spring (SecurityContextHolder),
-//garantindo que apenas usuários autenticados tenham acesso aos recursos protegidos pela aplicação.

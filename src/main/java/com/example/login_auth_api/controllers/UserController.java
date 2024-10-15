@@ -15,4 +15,3 @@ public class UserController {
         return ResponseEntity.ok("sucesso!");
     }
 }
-//Este controlador apenas fornece um único endpoint para responder com uma mensagem de sucesso quando acessado.

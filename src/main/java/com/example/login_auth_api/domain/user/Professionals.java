@@ -42,7 +42,3 @@ public class Professionals {
     private byte[] photo;
 }
 
-//Este código define a estrutura e as regras básicas de validação para a entidade Professionals,
-//que será usada para persistir dados no banco de dados,
-//incluindo relacionamentos com outras entidades (Specialty e LevelOfExpertise) e validações para assegurar que os campos
-//obrigatórios sejam preenchidos corretamente.

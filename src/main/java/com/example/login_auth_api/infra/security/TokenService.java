@@ -57,7 +57,3 @@ public class TokenService {
 
 }
 
-//O TokenService desempenha um papel crucial na segurança da sua aplicação Spring Boot ao fornecer
-//um método seguro e eficaz para autenticar usuários usando tokens JWT.
-//Ele garante que apenas usuários autenticados e autorizados possam acessar recursos protegidos pela aplicação,
-//mantendo a integridade e a segurança dos dados.

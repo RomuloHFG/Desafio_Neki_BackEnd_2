@@ -32,6 +32,3 @@ public class GlobalExceptionHandler {
     }
 }
 
-//No GlobalExceptionHandler esta o tratamento de Exceções para lidar com Tratamentos especificos que e quando o recurso nao e encontrado retornando um status HTTP 404(Não Encontrado.
-//em seguida esta fazendo o Tratamento de Exceções para lidar com as validações com o MethodArgumentNotValidException, retornando um status HTTP 400 (Requisição Inválida) com detalhes sobre os campos inválidos.
-//e por ultimo esta fazendo um tratamento de exceções genéricas que seria qualquer outra exceção não tratada é capturada, retornando um status HTTP 500 (Erro Interno do Servidor) com uma mensagem "genérica".

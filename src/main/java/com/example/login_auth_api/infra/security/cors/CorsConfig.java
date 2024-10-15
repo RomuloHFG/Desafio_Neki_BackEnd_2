@@ -19,5 +19,3 @@ public class CorsConfig implements WebMvcConfigurer {
     }
 }
 
-//Essa configuração é importante para garantir que sua aplicação web funcione corretamente e de forma segura,
-//permitindo que o front-end e o back-end se comuniquem sem problemas, mesmo que estejam em domínios diferentes.

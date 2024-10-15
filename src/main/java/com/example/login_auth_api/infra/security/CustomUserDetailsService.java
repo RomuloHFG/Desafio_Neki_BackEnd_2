@@ -21,6 +21,3 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 }
 
-//O CustomUserDetailsService é fundamental para garantir que o Spring Security tenha acesso às informações corretas do usuário durante o processo de autenticação.
-//Ele permite que você personalize como os detalhes do usuário são carregados e validados,
-//integrando-se perfeitamente com o sistema de autenticação e autorização do Spring Security para proteger sua aplicação web.

@@ -1,24 +1,31 @@
 package com.example.login_auth_api.controllers;
 
+import java.io.IOException;
+import java.util.Base64;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
 import com.example.login_auth_api.domain.user.Professionals;
 import com.example.login_auth_api.exceptions.ResourceNotFoundException;
 import com.example.login_auth_api.repositories.LevelOfExpertiseRepository;
 import com.example.login_auth_api.repositories.ProfessionalsRepository;
 import com.example.login_auth_api.repositories.SpecialtyRepository;
+
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-
-import java.io.IOException;
-import java.util.Base64;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/Professionals")
@@ -35,7 +42,16 @@ public class ProfessionalsController {
     private LevelOfExpertiseRepository levelOfExpertiseRepository;
 
     @GetMapping
-    public List<Professionals> getAllProfessionals() {
+    public List<Professionals> getAllProfessionals(
+            /*@RequestParam(value = "page", defaultValue = "0") int page,
+            @RequestParam(value = "size", defaultValue = "10") int size, 
+            @RequestParam(value = "sortDir", defaultValue = "asc") String sortDir*/
+    ) {
+        /*Sort sort = sortDir.equalsIgnoreCase("desc") ? Sort.by("name").descending() : Sort.by("name").ascending();   
+        Pageable pageable = PageRequest.of(page, size, sort);
+        Page<Professionals> professionalsPage = professionalsRepository.findAll(pageable);     
+        return professionalsPage.getContent();*/
+
         return professionalsRepository.findAll();
     }
 
@@ -79,14 +95,14 @@ public class ProfessionalsController {
         if (photoBytes != null) {
             String photoBase64 = Base64.getEncoder().encodeToString(photoBytes);
             return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "inline")
-                    .contentType(MediaType.IMAGE_JPEG)
+                    .header(org.springframework.http.HttpHeaders.CONTENT_DISPOSITION, "inline")
+                    .contentType(org.springframework.http.MediaType.IMAGE_JPEG)
                     .body(photoBase64);
         }
 
         return ResponseEntity.noContent().build();
-
     }
+
     @PutMapping("/{id}")
     public ResponseEntity<Professionals> updateProfessionals(@PathVariable Long id, @Valid @RequestBody Professionals professionalsDetails) {
         Professionals professionals = professionalsRepository.findById(id)
@@ -114,6 +130,3 @@ public class ProfessionalsController {
     }
 }
 
-//Este controlador lida com a lógica de criação, recuperação e atualização de profissionais,
-//incluindo o upload e download de fotos,
-//utilizando repositórios para persistência de dados e tratamento de exceções para recursos não encontrados.

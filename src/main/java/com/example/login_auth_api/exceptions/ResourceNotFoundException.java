@@ -11,5 +11,3 @@ public class ResourceNotFoundException extends RuntimeException {
     }
 }
 
-//A ResourceNotFoundException é uma maneira eficaz de lidar com situações em que os recursos solicitados não estão disponíveis,
-//fornecendo uma mensagem clara e um código de status HTTP apropriado.
